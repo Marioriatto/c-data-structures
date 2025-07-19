@@ -20,7 +20,7 @@ secuenceNode nextToInSecuence(secuenceNode *node, secuenceNode *root)
     }
     if (node->leftChild == NULL && node->rightChild == NULL)
     {
-        return node;
+        return node->parent;
     }
     if (node->rightChild != NULL)
     {
