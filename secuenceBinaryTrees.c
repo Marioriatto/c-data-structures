@@ -18,17 +18,10 @@ secuenceNode nextToInSecuence(secuenceNode *node, secuenceNode *root)
     {
         currentNode = nextToInSecuence(node->leftChild, root);
     }
-    if (node->leftChild == NULL && node->rightChild == NULL)
+    else
     {
-        return node->parent;
-    }
-    if (node->rightChild != NULL)
-    {
-        currentNode = nextToInSecuence(node->rightChild, root);
-    }
-    if (currentNode == root)
-    {
-        return root->parent;
+        currentNode = 
+node->rightChild;
     }
     return currentNode;
 }
