@@ -8,7 +8,7 @@ typedef struct{
 void insert_after(secuenceNode *node)
 {
     secuenceNode newNode;
-    newNode.parent = (node->rightChild != NULL) ? nextToInSecuence(&node, &node)->leftChild: node;
+    newNode.parent = (node->rightChild != NULL) ? nextToInSecuence(&node, &node)->leftChild : node;
     return;
 }
 secuenceNode nextToInSecuence(secuenceNode *node, secuenceNode *root)
@@ -18,7 +18,7 @@ secuenceNode nextToInSecuence(secuenceNode *node, secuenceNode *root)
     {
         currentNode = nextToInSecuence(node->leftChild, root);
     }
-    else
+    else if (node == root && node->rightChild != NULL) 
     {
         currentNode = 
 node->rightChild;
