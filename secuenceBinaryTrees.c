@@ -25,7 +25,7 @@ node->rightChild;
     }
     else 
     { 
-        currentNode = NULL  
+        currentNode = NULL;  
     }
     return currentNode;
 }
