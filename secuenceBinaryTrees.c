@@ -5,10 +5,10 @@ typedef struct{
     node *rightChild = NULL;
 }secuenceNode;
 
-void insert_after(int index, secuenceNode *root)
+void insertAfter(int index, secuenceNode *root)
 {
-    secuenceNode *node;
-    secuenceNode newNode, *position = nextToInSecuence(&node, &node);
+    secuenceNode *node = binarySearch(index, root);
+    secuenceNode newNode, *position = nextToInSecuence(node, node);
     if (position != NULL)
     {
         newNode.parent = position;
@@ -39,7 +39,7 @@ secuenceNode binarySearch(int index, secuenceNode *root)
             currentNode = currentNode->rightChild;
         }
     }
-    return NULL;
+    return currentNode;
 }
 secuenceNode nextToInSecuence(secuenceNode *node, secuenceNode *initial)
 {
