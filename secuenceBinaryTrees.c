@@ -23,5 +23,9 @@ secuenceNode nextToInSecuence(secuenceNode *node, secuenceNode *root)
         currentNode = 
 node->rightChild;
     }
+    else 
+    { 
+        currentNode = NULL  
+    }
     return currentNode;
 }
