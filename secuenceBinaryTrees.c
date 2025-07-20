@@ -5,8 +5,9 @@ typedef struct{
     node *rightChild = NULL;
 }secuenceNode;
 
-void insert_after(secuenceNode *node)
+void insert_after(int index, secuenceNode *root)
 {
+    secuenceNode *node;
     secuenceNode newNode, *position = nextToInSecuence(&node, &node);
     if (position != NULL)
     {
@@ -20,14 +21,34 @@ void insert_after(secuenceNode *node)
     }
     return;
 }
-secuenceNode nextToInSecuence(secuenceNode *node, secuenceNode *root)
+secuenceNode binarySearch(int index, secuenceNode *root)
+{
+    secuenceNode *currentNode = root;
+    while(currentNode->leftChild != NULL || currentNode->rightChild != NULL)
+    {
+        if (currentNode->index == index)
+        {
+            return currentNode;
+        }
+        else if (currentNode->index > index)
+        {
+            currentNode = currentNode->leftChild;
+        }
+        else if (currentNode->index < index)
+        {
+            currentNode = currentNode->rightChild;
+        }
+    }
+    return NULL;
+}
+secuenceNode nextToInSecuence(secuenceNode *node, secuenceNode *initial)
 {
     secuenceNode *currentNode;
     if (node->leftChild != NULL)
     {
-        currentNode = nextToInSecuence(node->leftChild, root);
+        currentNode = nextToInSecuence(node->leftChild, initial);
     }
-    else if (node == root && node->rightChild != NULL) 
+    else if (node == initial && node->rightChild != NULL) 
     {
         currentNode = node->rightChild;
     }
