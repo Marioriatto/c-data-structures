@@ -12,6 +12,7 @@ string bubbleSort(string[] list)
     bool cambios = false;
     do
     {
+    cambios = false;
     for (int i = 0; i < len; i++)
     {
         int ans = get_int("1: %s o 2: %s?",list[i],list[i + 1]);
@@ -24,4 +25,5 @@ string bubbleSort(string[] list)
         }
     }
     }while(cambios);
+return list;
 }
