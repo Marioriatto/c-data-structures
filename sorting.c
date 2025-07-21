@@ -6,9 +6,8 @@ int main()
 string harryPotter[8] = {"Hedwig", "Dumbledore", "Cedrick", "Sirius", "Lupin", "Snape", "Fred", "Dobby"}, LoTR[8] = {"Aragorn","Sam","Frodo","Gandalf","Legolas","Gimli","Gollum","Bilbo"};
 
 }
-string bubbleSort(string[] list)
+string bubbleSort(int len, string[] list)
 {
-    int len = strlen(list);
     bool cambios = false;
     do
     {
