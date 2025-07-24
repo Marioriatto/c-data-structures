@@ -1,6 +1,5 @@
 typedef struct{
     int index, height, depth;
-    node *parent = NULL;
     node *leftChild = NULL;
     node *rightChild = NULL;
 }secuenceNode;
@@ -11,12 +10,10 @@ void insertAfter(int index, secuenceNode *root)
     secuenceNode newNode, *position = nextToInSecuence(node, node);
     if (position != NULL)
     {
-        newNode.parent = position;
         position->rightChild = &newNode;
     }
     else
     {
-        newNode.parent = node;
         node->rightChild = &newNode;
     }
     return;
