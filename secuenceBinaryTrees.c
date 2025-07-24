@@ -18,7 +18,7 @@ void insertAfter(int index, secuenceNode *root)
     }
     return;
 }
-secuenceNode binarySearch(int index, secuenceNode *root)
+secuenceNode* binarySearch(int index, secuenceNode *root)
 {
     secuenceNode *currentNode = root;
     while(currentNode->leftChild != NULL || currentNode->rightChild != NULL)
@@ -38,7 +38,7 @@ secuenceNode binarySearch(int index, secuenceNode *root)
     }
     return currentNode;
 }
-secuenceNode nextToInSecuence(secuenceNode *node, secuenceNode *initial)
+secuenceNode* nextToInSecuence(secuenceNode *node, secuenceNode *initial)
 {
     secuenceNode *currentNode;
     if (node->leftChild != NULL)
