@@ -1,3 +1,4 @@
+#include<stdlib.h>
 typedef struct{
     int index, height, depth;
     node *leftChild = NULL;
@@ -7,7 +8,7 @@ typedef struct{
 void insertAfter(int index, secuenceNode *root)
 {
     secuenceNode *node = binarySearch(index, root);
-    secuenceNode newNode, *position = nextToInSecuence(node, node);
+    secuenceNode newNode = malloc(sizeof(secuenceNode)), *position = nextToInSecuence(node, node);
     if (position != NULL)
     {
         position->rightChild = &newNode;
